@@ -1,16 +1,16 @@
 # Frontend Codex Skills
 
-Набір взаємопов'язаних Codex skills для повного Web/UI workflow: від дизайн-брифу до реалізації та незалежного acceptance-аудиту.
+A collection of interconnected Codex skills covering the complete Web/UI workflow, from design brief to implementation and independent acceptance review.
 
 ## Skills
 
-| Skill | Призначення |
+| Skill | Purpose |
 |---|---|
-| `web-ui-designer` | Створює goal-aware Web/UI design brief: аудиторія, IA, first viewport, visual system, компоненти, стани, motion, responsive та accessibility. |
-| `frontend-design-planner` | Перетворює затверджений дизайн, Figma або макет на технічний frontend-план: стек, залежності, структура файлів, компоненти та етапи реалізації. |
-| `frontend-implementation` | Реалізує затверджений дизайн або план у робочому frontend-проєкті, додає взаємодії та проводить build/browser QA. |
-| `frontend-acceptance-review` | Незалежно порівнює ТЗ, макет і готову реалізацію; формує requirements matrix, evidence-backed findings і acceptance verdict. |
-| `website-master-prompts` | Створює один copy-ready master prompt для генерації сайту або frontend-прототипу іншою AI-системою. |
+| `web-ui-designer` | Creates a goal-aware Web/UI design brief covering the audience, information architecture, first viewport, visual system, components, states, motion, responsiveness, and accessibility. |
+| `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a technical frontend plan covering the stack, dependencies, file structure, components, and implementation stages. |
+| `frontend-implementation` | Implements an approved design or plan in a working frontend project, adds interactions, and performs build and browser QA. |
+| `frontend-acceptance-review` | Independently compares the requirements, design, and finished implementation, producing a requirements matrix, evidence-backed findings, and an acceptance verdict. |
+| `website-master-prompts` | Creates a single copy-ready master prompt for generating a website or frontend prototype with another AI system. |
 
 ## Workflow
 
@@ -29,50 +29,50 @@ frontend-acceptance-review
         +---- findings ----> frontend-implementation
 ```
 
-Альтернативна prompt-гілка:
+Alternative prompt workflow:
 
 ```text
 web-ui-designer -> website-master-prompts -> external AI generator
 ```
 
-## Встановлення
+## Installation
 
-### Усі skills
+### Install all skills
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-### Вибрані skills
+### Install selected skills
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 `
   -Skills web-ui-designer,frontend-design-planner
 ```
 
-### Оновлення існуючих skills
+### Update existing skills
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Force
 ```
 
-За замовчуванням skills встановлюються у:
+By default, skills are installed into:
 
 ```text
 %USERPROFILE%\.codex\skills
 ```
 
-Після встановлення перезапустіть Codex.
+Restart Codex after installation.
 
-## Ручне встановлення
+## Manual Installation
 
-Скопіюйте потрібну папку з `skills/` у:
+Copy the required folder from `skills/` into:
 
 ```text
 C:\Users\<username>\.codex\skills
 ```
 
-Приклад:
+Example:
 
 ```powershell
 Copy-Item -Recurse `
@@ -80,22 +80,22 @@ Copy-Item -Recurse `
   "$env:USERPROFILE\.codex\skills\frontend-acceptance-review"
 ```
 
-## Перевірка
+## Validation
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\validate.ps1
 ```
 
-Validator перевіряє:
+The validator checks:
 
-- наявність `SKILL.md`;
-- коректний frontmatter `name` і `description`;
-- відповідність назви папки полю `name`;
-- наявність `agents/openai.yaml`;
-- існування всіх згаданих reference-файлів;
-- відсутність template placeholders.
+- that `SKILL.md` exists;
+- that the `name` and `description` frontmatter is valid;
+- that the folder name matches the `name` field;
+- that `agents/openai.yaml` exists;
+- that all referenced files exist;
+- that no template placeholders remain.
 
-## Структура
+## Repository Structure
 
 ```text
 frontend-codex-skills/
@@ -114,7 +114,7 @@ frontend-codex-skills/
 
 ## Scope
 
-Цей репозиторій містить лише авторські frontend skills. Сторонні набори GSAP, Taste Skills, Remotion і Modern Web Guidance сюди не включені.
+This repository contains only original frontend skills. Third-party collections such as GSAP Skills, Taste Skills, Remotion, and Modern Web Guidance are not included.
 
 ## License
 
