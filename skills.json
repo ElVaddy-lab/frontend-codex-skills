@@ -1,0 +1,31 @@
+{
+  "name": "frontend-codex-skills",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "web-ui-designer",
+      "stage": "design",
+      "output": "Web/UI design brief"
+    },
+    {
+      "name": "frontend-design-planner",
+      "stage": "planning",
+      "output": "Frontend implementation plan"
+    },
+    {
+      "name": "frontend-implementation",
+      "stage": "implementation",
+      "output": "Working frontend implementation"
+    },
+    {
+      "name": "frontend-acceptance-review",
+      "stage": "acceptance",
+      "output": "Evidence-backed acceptance report"
+    },
+    {
+      "name": "website-master-prompts",
+      "stage": "prompting",
+      "output": "Copy-ready website generation prompt"
+    }
+  ]
+}

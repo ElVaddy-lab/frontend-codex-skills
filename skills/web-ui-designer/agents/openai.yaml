@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web UI Designer"
+  short_description: "Generate goal-aware Web/UI design briefs."
+  default_prompt: "Create a complete Web/UI design brief for the supplied product goal. Define audience, design direction, information architecture, first viewport, visual system, UI components and states, motion, responsive behavior, accessibility constraints, and handoff guidance."
