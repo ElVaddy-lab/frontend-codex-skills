@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web UI Reverse Engineer"
+  short_description: "Decompose websites into UI systems"
+  default_prompt: "Use $web-ui-reverse-engineer to analyze this website, design, or codebase and extract its components, design tokens, layout system, and interaction patterns."

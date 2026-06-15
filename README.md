@@ -1,11 +1,12 @@
 # Frontend Codex Skills
 
-A collection of interconnected Codex skills covering the complete Web/UI workflow, from design brief to implementation and independent acceptance review.
+A collection of interconnected Codex skills covering Web/UI reverse engineering, design, technical planning, implementation, prompt generation, and independent acceptance review.
 
 ## Skills
 
 | Skill | Purpose |
 |---|---|
+| `web-ui-reverse-engineer` | Decomposes an existing website, mockup, Figma design, live URL, or frontend codebase into components, design tokens, layout rules, responsive behavior, interaction patterns, assets, implementation clues, and confidence-rated unknowns. |
 | `web-ui-designer` | Creates a goal-aware Web/UI design brief covering the audience, information architecture, first viewport, visual system, components, states, motion, responsiveness, and accessibility. |
 | `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a technical frontend plan covering the stack, dependencies, file structure, components, and implementation stages. |
 | `frontend-implementation` | Implements an approved design or plan in a working frontend project, adds interactions, and performs build and browser QA. |
@@ -15,10 +16,17 @@ A collection of interconnected Codex skills covering the complete Web/UI workflo
 ## Workflow
 
 ```text
-web-ui-designer
+existing site / design / code
         |
         v
-frontend-design-planner
+web-ui-reverse-engineer
+        |
+        +---- reconstruction ----> frontend-design-planner
+        |
+        `---- redesign context ---> web-ui-designer
+                                      |
+                                      v
+                              frontend-design-planner
         |
         v
 frontend-implementation
@@ -32,8 +40,10 @@ frontend-acceptance-review
 Alternative prompt workflow:
 
 ```text
-web-ui-designer -> website-master-prompts -> external AI generator
+web-ui-reverse-engineer -> web-ui-designer -> website-master-prompts -> external AI generator
 ```
+
+For a new product without an existing interface, start directly with `web-ui-designer`.
 
 ## Installation
 
@@ -100,6 +110,7 @@ The validator checks:
 ```text
 frontend-codex-skills/
 |-- skills/
+|   |-- web-ui-reverse-engineer/
 |   |-- web-ui-designer/
 |   |-- frontend-design-planner/
 |   |-- frontend-implementation/
