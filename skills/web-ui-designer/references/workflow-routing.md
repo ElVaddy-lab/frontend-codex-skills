@@ -10,6 +10,7 @@ Use this reference for ambiguous or multi-step Web/UI requests where several loc
 | Design direction, UX concept, visual system, layout idea | `web-ui-designer` | Design brief |
 | Development plan, stack choice, dependencies, file structure | `frontend-design-planner` | Technical frontend plan |
 | Build, implement, code, recreate, finish, make it work | `frontend-implementation` | Working frontend code and QA |
+| Performance audit, Core Web Vitals, Lighthouse/PageSpeed, bundle cost, media/font loading, runtime jank, animation cost | `frontend-performance-audit` | Evidence-backed performance report |
 | Master prompt, prompt for site generation, AI generator prompt | `website-master-prompts` | Copy-ready generator prompt |
 | Think through options, compare approaches, choose strategy | `brainstorm` | Options, tradeoffs, recommendation |
 
@@ -20,7 +21,8 @@ For broad "create a site/app from scratch" requests, route in this order unless 
 1. `web-ui-designer` for the design direction and UX/visual brief.
 2. `frontend-design-planner` for stack, dependencies, file structure, components, and phases.
 3. `frontend-implementation` for code, build, dev server, and browser QA.
-4. `website-master-prompts` only if the requested deliverable is a prompt for another generator.
+4. `frontend-performance-audit` when production performance, Core Web Vitals, bundle cost, or runtime smoothness matters.
+5. `website-master-prompts` only if the requested deliverable is a prompt for another generator.
 
 For an existing interface:
 
@@ -34,6 +36,8 @@ For an existing interface:
 - **Analyze + redesign**: use `web-ui-reverse-engineer`, then hand off to `web-ui-designer`.
 - **Analyze + rebuild plan**: use `web-ui-reverse-engineer`, then hand off to `frontend-design-planner`.
 - **Plan + implementation**: use `frontend-design-planner`, then hand off to `frontend-implementation`.
+- **Implementation + performance**: use `frontend-implementation`, then hand off to `frontend-performance-audit`.
+- **Performance findings + fixes**: use `frontend-performance-audit` first when diagnosis is missing; use `frontend-implementation` when findings are already concrete.
 - **Design + prompt**: use `web-ui-designer`, then convert the approved direction with `website-master-prompts`.
 - **Prompt only**: use `website-master-prompts` directly; do not create a full design brief first unless the prompt lacks concept direction.
 - **Code now**: use `frontend-implementation` directly when the user explicitly asks to build and accepts local assumptions.
@@ -46,6 +50,7 @@ For an existing interface:
 - Do not use `frontend-design-planner` for pure visual direction without stack or implementation planning.
 - Do not use `web-ui-designer` to choose package dependencies.
 - Do not use `web-ui-reverse-engineer` to issue an acceptance verdict or silently redesign the inspected interface.
+- Do not use `frontend-performance-audit` as a replacement for acceptance review or code implementation.
 
 ## Default Ambiguity Rule
 
@@ -55,4 +60,5 @@ If the user gives a broad but unclear Web/UI request, start with the earliest mi
 - missing concept/design -> `web-ui-designer`;
 - design exists but build path is unclear -> `frontend-design-planner`;
 - plan/design exists and user wants output -> `frontend-implementation`;
+- performance is the question -> `frontend-performance-audit`;
 - requested output is a prompt -> `website-master-prompts`.
