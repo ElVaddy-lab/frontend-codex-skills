@@ -1,6 +1,6 @@
 # Frontend Codex Skills
 
-A collection of interconnected Codex skills covering Web/UI reverse engineering, design, technical planning, implementation, performance auditing, prompt generation, and independent acceptance review.
+A collection of interconnected Codex skills covering Web/UI reverse engineering, design, technical planning, implementation, performance and accessibility auditing, prompt generation, and independent acceptance review.
 
 ## Skills
 
@@ -11,6 +11,7 @@ A collection of interconnected Codex skills covering Web/UI reverse engineering,
 | `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a technical frontend plan covering the stack, dependencies, file structure, components, and implementation stages. |
 | `frontend-implementation` | Implements an approved design or plan in a working frontend project, adds interactions, and performs build and browser QA. |
 | `frontend-performance-audit` | Audits finished or near-finished frontends for Core Web Vitals, Lighthouse/PageSpeed evidence, bundle cost, JavaScript runtime work, media and font loading, animation cost, caching, budgets, and prioritized performance findings. |
+| `frontend-accessibility-audit` | Audits finished or near-finished frontends for WCAG 2.2, keyboard navigation, focus, ARIA/name-role-value, semantic HTML, labels, landmarks, forms, contrast, motion, screen-reader flow, automated findings, and prioritized accessibility fixes. |
 | `frontend-acceptance-review` | Independently compares the requirements, design, and finished implementation, producing a requirements matrix, evidence-backed findings, and an acceptance verdict. |
 | `website-master-prompts` | Creates a single copy-ready master prompt for generating a website or frontend prototype with another AI system. |
 
@@ -36,6 +37,11 @@ frontend-implementation
 frontend-performance-audit
         |
         +---- performance findings ----> frontend-implementation
+        |
+        v
+frontend-accessibility-audit
+        |
+        +---- accessibility findings ----> frontend-implementation
         |
         v
 frontend-acceptance-review
@@ -121,6 +127,7 @@ frontend-codex-skills/
 |   |-- frontend-design-planner/
 |   |-- frontend-implementation/
 |   |-- frontend-performance-audit/
+|   |-- frontend-accessibility-audit/
 |   |-- frontend-acceptance-review/
 |   `-- website-master-prompts/
 |-- install.ps1

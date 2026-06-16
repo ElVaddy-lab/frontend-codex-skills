@@ -1,6 +1,6 @@
 {
   "name": "frontend-codex-skills",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "skills": [
     {
       "name": "web-ui-reverse-engineer",
@@ -26,6 +26,11 @@
       "name": "frontend-performance-audit",
       "stage": "performance",
       "output": "Evidence-backed frontend performance audit"
+    },
+    {
+      "name": "frontend-accessibility-audit",
+      "stage": "accessibility",
+      "output": "Evidence-backed frontend accessibility audit"
     },
     {
       "name": "frontend-acceptance-review",

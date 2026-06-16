@@ -28,6 +28,8 @@ Default to the user's language for status updates and final summaries. If the re
 - Do not produce a copy-ready prompt for another AI generator; use `website-master-prompts`.
 - Do not perform a deep performance audit here; use `frontend-performance-audit` when the task is diagnosis of Core Web Vitals, Lighthouse/PageSpeed, bundle cost, media/font loading, runtime jank, or animation cost.
 - If concrete performance findings already exist, implement the fixes here and re-run the relevant verification.
+- Do not perform a deep accessibility audit here; use `frontend-accessibility-audit` when the task is diagnosis of WCAG, keyboard navigation, focus, ARIA/name-role-value, labels, forms, contrast, reduced motion, or screen-reader flow.
+- If concrete accessibility findings already exist, implement the fixes here and re-run the relevant verification.
 - If a prerequisite design or plan is missing but the user explicitly says to build anyway, make a minimal local assumption and document it in the final response.
 
 ## Implementation Workflow
@@ -52,6 +54,7 @@ Use `references/implementation-workflow.md` for the detailed execution checklist
 - Load `references/browser-qa.md` before calling the work done.
 - For ambiguous multi-step Web/UI requests, consult `../web-ui-designer/references/workflow-routing.md` before deciding whether to implement immediately or hand off to design/planning first.
 - For performance-focused requests, hand off to `frontend-performance-audit` unless the user already provided specific findings to fix.
+- For accessibility-focused requests, hand off to `frontend-accessibility-audit` unless the user already provided specific findings to fix.
 
 When current library syntax, install commands, or framework behavior may have changed, verify against current official documentation or the available docs tool before relying on memory.
 
@@ -106,4 +109,5 @@ If any verification cannot run, say exactly why in the final response.
 - Installing dependencies without explaining why the design needs them.
 - Claiming completion without running the available build or browser checks.
 - Treating broad performance complaints as implementation tasks before diagnosing the bottleneck.
+- Treating broad accessibility complaints as implementation tasks before diagnosing the barrier.
 - Spending the response on design or planning when the user asked for implementation.

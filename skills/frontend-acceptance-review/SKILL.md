@@ -17,8 +17,9 @@ Default to `audit-only`. Do not edit code unless the user explicitly asks for fi
 2. `frontend-design-planner` defines the technical plan.
 3. `frontend-implementation` builds the frontend.
 4. `frontend-performance-audit` verifies production performance when Core Web Vitals, bundle cost, runtime smoothness, or media/font loading are in scope.
-5. `frontend-acceptance-review` independently verifies the result against design and requirements.
-6. Failed findings return to `frontend-implementation`; run the relevant audit again after fixes.
+5. `frontend-accessibility-audit` verifies accessibility when WCAG, keyboard, focus, ARIA, labels, forms, contrast, or screen-reader flow are in scope.
+6. `frontend-acceptance-review` independently verifies the result against design and requirements.
+7. Failed findings return to `frontend-implementation`; run the relevant audit again after fixes.
 
 Do not replace the audit with implementation commentary or a generic code review.
 
@@ -119,6 +120,7 @@ Add narrow mobile, wide desktop, dark mode, or authenticated states when the req
 - Do not report issues outside the supplied scope as acceptance failures; place useful extras under non-blocking observations.
 - Do not assign exact pixel differences unless the compared viewport, scale, fonts, and assets support that precision.
 - Do not perform a deep performance audit here. Record obvious performance regressions as quality observations, and use `frontend-performance-audit` when Core Web Vitals, Lighthouse/PageSpeed, bundle cost, media/font loading, or runtime jank require evidence-backed diagnosis.
+- Do not perform a deep accessibility audit here. Record obvious accessibility regressions as quality observations, and use `frontend-accessibility-audit` when WCAG, keyboard navigation, focus, ARIA, labels, forms, contrast, reduced motion, or screen-reader behavior require evidence-backed diagnosis.
 
 ## Reference Files
 
