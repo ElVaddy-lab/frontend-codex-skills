@@ -13,7 +13,7 @@ A collection of interconnected Codex skills covering Web/UI reverse engineering,
 | `frontend-performance-audit` | Audits finished or near-finished frontends for Core Web Vitals, Lighthouse/PageSpeed evidence, bundle cost, JavaScript runtime work, media and font loading, animation cost, caching, budgets, and prioritized performance findings. |
 | `frontend-accessibility-audit` | Audits finished or near-finished frontends for WCAG 2.2, keyboard navigation, focus, ARIA/name-role-value, semantic HTML, labels, landmarks, forms, contrast, motion, screen-reader flow, automated findings, and prioritized accessibility fixes. |
 | `frontend-acceptance-review` | Independently compares the requirements, design, and finished implementation, producing a requirements matrix, evidence-backed findings, and an acceptance verdict. |
-| `website-master-prompts` | Creates a single copy-ready master prompt for generating a website or frontend prototype with another AI system. |
+| `website-master-prompts` | Creates copy-ready website generation master prompts with prompt modes, generator targets, source handoff preservation, stack roles, first viewport, visual system, motion, responsive behavior, anti-generic constraints, and acceptance checks. |
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 {
   "name": "frontend-codex-skills",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "skills": [
     {
       "name": "web-ui-reverse-engineer",
@@ -40,7 +40,7 @@
     {
       "name": "website-master-prompts",
       "stage": "prompting",
-      "output": "Copy-ready website generation prompt"
+      "output": "Copy-ready website generation master prompt"
     }
   ]
 }

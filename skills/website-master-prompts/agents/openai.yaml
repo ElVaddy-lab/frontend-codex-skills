@@ -1,4 +1,4 @@
 interface:
   display_name: "Website Master Prompts"
-  short_description: "Create detailed master prompts for AI website generation."
-  default_prompt: "Create a high-detail master prompt for generating a website. Include concept, stack, visual system, information architecture, section-by-section direction, animation rules, responsive behavior, asset guidance, and anti-pattern constraints."
+  short_description: "Create copy-ready prompts for AI website generators."
+  default_prompt: "Use $website-master-prompts to create a copy-ready master prompt for generating a website or frontend prototype. Include prompt mode, generator target, source handoff, concept, stack and dependency roles, first viewport, visual system, components and states, motion, responsive behavior, asset direction, implementation constraints, anti-generic rules, and acceptance checks."

@@ -2,6 +2,8 @@
 
 Use when the prompt needs motion, scroll choreography, 3D, WebGL, or animation libraries.
 
+Motion must serve content, product state, navigation, inspection, or user feedback. Do not use motion as generic background decoration.
+
 ## Framer Motion + Lenis
 
 Roles:
@@ -42,6 +44,17 @@ Prompt details to include:
 - Scrub behavior.
 - Cleanup expectations.
 
+## GSAP Skill Pack Routing
+
+When the prompt names GSAP, assign responsibilities clearly:
+
+- `gsap-core`: tweens, timelines, easing, transforms.
+- `gsap-timeline`: sequenced product or editorial transitions.
+- `gsap-scrolltrigger`: pinned sections, scroll-linked progress, reveal timing.
+- `gsap-react`: React lifecycle-safe animation setup and cleanup.
+- `gsap-performance`: transform/opacity-first animation, limited layout thrash, mobile fallbacks.
+- `gsap-plugins`: plugin registration and paid/plugin-specific constraints when relevant.
+
 ## Anime.js
 
 Use for lightweight timeline animation, SVG motion, microinteractions, and decorative sequences.
@@ -60,3 +73,5 @@ Prompt details to include:
 - Making scroll effects block reading.
 - Using 3D only as generic background decoration.
 - Ignoring mobile performance.
+- Ignoring cleanup for requestAnimationFrame loops, ScrollTrigger instances, event listeners, or WebGL resources.
+- Animating layout properties when transform/opacity would work.

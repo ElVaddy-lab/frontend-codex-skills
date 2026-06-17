@@ -45,6 +45,15 @@ Change at least three of these between variants:
 - Palette logic.
 - Interaction pattern.
 
+## Scenario-Specific Grammar
+
+- **Landing page**: replace generic hero flow with product inspection, proof-first dossier, configurator-first, map-room, or editorial launch grammar.
+- **SaaS/dashboard**: first viewport should be the operating surface: tables, queues, charts, filters, command rail, alerts, or workflow state.
+- **Ecommerce**: prioritize product inspection, variants, filters, inventory, shipping confidence, cart state, comparison, reviews, and media zoom.
+- **Portfolio/editorial**: use image rhythm, typographic pacing, archive walls, project metadata, essays, captions, and sequencing rather than SaaS cards.
+- **Tool UI**: start with the working tool surface, controls, inputs, output preview, export, history, and state feedback.
+- **Content site**: emphasize navigation, reading rhythm, search, taxonomy, article templates, related content, and SEO structure.
+
 ## Anti-Patterns
 
 - Same layout with a different industry label.
