@@ -99,3 +99,13 @@ Use:
 | `surface.canvas` | `#...` | Page background | Computed style on `body` | EXACT |
 
 If the original token name is unknown, use a descriptive role and mark it as an analyst label.
+
+## Normalization for Handoff
+
+When exact original tokens are unavailable, provide normalized recommendations separately:
+
+- `Observed values`: what evidence shows.
+- `Analyst-normalized scale`: a proposed clean scale for reconstruction.
+- `Do not claim`: never present normalized values as the original token system.
+
+For downstream planning, call out which tokens are fidelity-critical and which can be approximated.

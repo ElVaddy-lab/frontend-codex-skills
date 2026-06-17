@@ -7,9 +7,11 @@ Use this structure for a complete reverse-engineering report. Remove sections th
 - Requested mode:
 - Product or interface:
 - Sources inspected:
+- Evidence type labels used:
 - Routes, frames, states, themes, and viewports:
 - Scope exclusions:
 - Access limitations:
+- Intended handoff:
 
 ## 2. Executive Summary
 
@@ -35,6 +37,7 @@ Provide:
 - variants, slots, and states;
 - one-off sections;
 - component candidates that are repeated visually but not abstracted in code.
+- source and confidence for material component boundaries.
 
 ## 5. Design Tokens and Visual System
 
@@ -73,6 +76,7 @@ Document triggers, timing, easing, sequencing, scroll behavior, layout transitio
 Separate:
 
 - observed breakpoints and behavior;
+- defined breakpoints and behavior;
 - inferred adaptations;
 - reflow, stacking, reordering, hiding, collapsing, resizing, and touch changes;
 - unresolved mobile or wide-screen behavior.
@@ -99,6 +103,7 @@ List:
 - missing assets or states;
 - fidelity priorities;
 - decisions required before planning.
+- handoff status: `Design-ready`, `Planner-ready`, `Implementation-ready only with approved plan`, `Prompt-ready`, or `Analysis complete`.
 
 Do not choose the stack or write an implementation plan here.
 

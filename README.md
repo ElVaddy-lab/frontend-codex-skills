@@ -6,7 +6,7 @@ A collection of interconnected Codex skills covering Web/UI reverse engineering,
 
 | Skill | Purpose |
 |---|---|
-| `web-ui-reverse-engineer` | Decomposes an existing website, mockup, Figma design, live URL, or frontend codebase into components, design tokens, layout rules, responsive behavior, interaction patterns, assets, implementation clues, and confidence-rated unknowns. |
+| `web-ui-reverse-engineer` | Decomposes an existing website, mockup, Figma design, live URL, or frontend codebase into evidence-backed components, design tokens, layout grammar, responsive behavior, interactions, assets, technical architecture, confidence-rated unknowns, and redesign/rebuild handoff. |
 | `web-ui-designer` | Creates a scenario-aware Web/UI design brief covering brief mode, audience, information architecture, first viewport, visual system, components, states, motion, responsiveness, accessibility, and handoff status. |
 | `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a scenario-aware technical frontend plan covering framework choice, dependencies, framework-specific file structure, components, state/data, testing, deployment, SEO/content, handoff status, and implementation stages. |
 | `frontend-implementation` | Implements an approved design or plan in a working frontend project, preserves handoff constraints, removes placeholders, adds interactions, and performs build, browser QA, and completion gate checks. |

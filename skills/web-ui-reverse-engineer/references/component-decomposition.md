@@ -60,6 +60,7 @@ For important components include:
 - source evidence;
 - confidence;
 - notes about reuse or coupling.
+- downstream action: preserve, normalize, rebuild as primitive, rebuild as composed component, or redesign.
 
 ## Tree Format
 
@@ -78,3 +79,12 @@ ProductShell
 ```
 
 Use `[variant: ...]`, `[state: ...]`, and `[conditional]` annotations when they clarify the structure.
+
+## Reconstruction Priority
+
+For rebuild handoff, mark components:
+
+- `P0`: required for the first viewport or primary action;
+- `P1`: required for main flow fidelity;
+- `P2`: reusable support component or secondary state;
+- `Unknown`: needs more evidence before planning.

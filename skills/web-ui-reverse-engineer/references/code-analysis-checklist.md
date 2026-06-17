@@ -51,6 +51,7 @@ When possible, verify:
 - console errors;
 - behavior at representative viewports;
 - whether conditional states are reachable.
+- whether source-defined routes/components match screenshots, Figma, or user-provided references.
 
 ## Reporting Distinctions
 
@@ -62,3 +63,4 @@ Use precise language:
 - "Potentially unused" when reachability is not proven.
 - "Component candidate" for repeated markup without an abstraction.
 - "Runtime behavior unknown" when execution is unavailable.
+- "Current stack observed" when framework/dependency evidence is descriptive only; final stack choice belongs to `frontend-design-planner`.

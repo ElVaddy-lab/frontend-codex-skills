@@ -69,3 +69,7 @@ Create a source matrix:
 | Responsive behavior | Frame-dependent | Strong | Strong when tested | Multi-frame only |
 
 When sources conflict, preserve both facts and explain likely causes such as stale design, overrides, fallback fonts, experiments, content differences, or viewport mismatch.
+
+## Intake Rule
+
+Before deep analysis, record the artifact type, source, viewport/frame size, state/theme/auth context, access limits, and requested downstream intent. Use `artifact-intake.md` when any of these are unclear.
