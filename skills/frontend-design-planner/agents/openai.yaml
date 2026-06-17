@@ -1,4 +1,4 @@
 interface:
   display_name: "Frontend Design Planner"
-  short_description: "Plan frontend builds from supplied designs and mockups."
-  default_prompt: "Analyze the supplied website or app design and produce a detailed frontend development plan with stack choice, dependencies, file structure, components, state/data strategy, testing, deployment, implementation phases, and QA checks."
+  short_description: "Plan scenario-aware frontend builds from supplied designs."
+  default_prompt: "Analyze the supplied website or app design and produce a scenario-aware frontend development plan with stack choice, dependencies, framework-specific file structure, components, state/data strategy, testing, deployment, SEO/content, implementation phases, QA checks, and handoff status."

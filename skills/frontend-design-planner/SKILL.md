@@ -1,25 +1,29 @@
 ---
 name: frontend-design-planner
-description: Use when the user provides an approved Web/UI design brief, mockup, screenshot, Figma design, visual reference, landing-page concept, or UI idea and asks for a frontend development plan, stack choice, dependencies, file structure, component breakdown, state/data plan, testing strategy, deployment path, implementation sequence, or design-to-code blueprint. Do not use for pure design direction, code implementation, or copy-ready generator prompts.
+description: Use when the user has a concrete or approved Web/UI design artifact, mockup, screenshot, Figma design, visual reference, or landing/app concept and wants a technical frontend implementation plan. Do not use for pure design direction, code implementation, or copy-ready generator prompts.
 ---
 
 # Frontend Design Planner
 
 ## Overview
 
-Turn a supplied frontend design into a concrete implementation blueprint before coding. Produce practical, design-aware plans with framework selection, dependency choices, file structure, component boundaries, state/data strategy, motion rules, testing, deployment, responsive behavior, and QA checks.
+Turn a supplied frontend design into a concrete implementation blueprint before coding. Produce practical, scenario-aware plans with framework selection, dependency choices, file structure, component boundaries, state/data strategy, motion rules, testing, deployment, responsive behavior, and QA checks.
 
 Default to the user's language. If the request is in Ukrainian, answer in Ukrainian.
 
 ## Core Workflow
 
 1. Inspect the design source: approved design brief, image, Figma notes, screenshot, written concept, target audience, and any explicit stack constraints.
-2. Identify the product type: marketing site, SaaS app, dashboard, portfolio, ecommerce, editorial site, game-like experience, or utility. If the design direction itself is missing, use `web-ui-designer` first instead of inventing a full visual concept here.
-3. Decide whether the work needs plain HTML/CSS/JS, Astro, React + Vite, Next.js, SvelteKit, React Router Framework Mode, or a richer motion/3D stack. Load `references/stack-selection.md` and `references/framework-selection.md` when this decision is not obvious.
-4. Break the design into sections, layouts, reusable components, states, assets, data/config files, routing needs, SEO/content needs, and deployment constraints.
-5. Define state, data, forms, testing, accessibility/performance audit handoff, and deployment/CI only to the depth the project actually needs.
-6. Produce a staged implementation plan that a developer can follow without re-interpreting the design.
-7. End with verification checks for responsiveness, overflow, interaction states, accessibility, performance, visual fidelity, build/test status, and deploy readiness.
+2. Identify the product scenario: content/landing, SaaS/dashboard, ecommerce/catalog, portfolio/editorial, tool UI, prototype, game-like experience, or routed app. If the design direction itself is missing, use `web-ui-designer` first instead of inventing a full visual concept here.
+3. Choose an output mode:
+   - `compact` for small prototypes, single static pages, or early planning.
+   - `full production` for production websites, dashboards, ecommerce, routed apps, or CMS/API-backed work.
+   - `handoff-ready` when the next step is `frontend-implementation`, audits, or `website-master-prompts`.
+4. Decide whether the work needs plain HTML/CSS/JS, Astro, React + Vite, Next.js, SvelteKit, React Router Framework Mode, or a richer motion/3D stack. Load `references/stack-selection.md`, `references/framework-selection.md`, and `references/project-structures.md` when this decision is not obvious.
+5. Break the design into sections, layouts, reusable components, states, assets, data/config files, routing needs, SEO/content needs, and deployment constraints.
+6. Define state, data, forms, testing, accessibility/performance audit handoff, and deployment/CI only to the depth the project actually needs. Mark irrelevant sections as `Not material for this build` instead of inventing boilerplate.
+7. Produce a staged implementation plan that a developer can follow without re-interpreting the design.
+8. End with verification checks for responsiveness, overflow, interaction states, accessibility, performance, visual fidelity, build/test status, and deploy readiness.
 
 Do not jump directly to implementation unless the user explicitly asks for code after the plan.
 
@@ -29,11 +33,12 @@ Do not jump directly to implementation unless the user explicitly asks for code 
 - Use this skill when the design is already supplied or sufficiently implied and the missing piece is how to build it.
 - Hand off to `frontend-implementation` when the user approves the plan or asks to implement/build/code it.
 - Hand off to `website-master-prompts` when the requested deliverable is a generator prompt rather than a developer implementation plan.
+- Hand off to `frontend-performance-audit`, `frontend-accessibility-audit`, or `frontend-acceptance-review` only after there is a finished or near-finished implementation to inspect.
 - Keep output technical and implementation-ready; do not turn it into a moodboard or a copy-ready AI prompt.
 
 ## Required Output Shape
 
-Use this structure unless the user asks for a shorter format:
+Use this structure unless the user asks for a shorter format. Start by stating the output mode: `compact`, `full production`, or `handoff-ready`.
 
 1. **Design analysis** - summarize layout, visual language, content hierarchy, interaction density, and likely hard parts.
 2. **Recommended stack** - name the stack and explain why it fits this design better than the main alternatives.
@@ -50,7 +55,15 @@ Use this structure unless the user asks for a shorter format:
 13. **Implementation phases** - order the work from setup to QA.
 14. **Quality checklist** - list the final checks before calling the build finished.
 
-For the exact response skeleton, load `references/output-template.md`.
+For the exact response skeleton and proportionality rules, load `references/output-template.md`.
+
+## Scenario Defaults
+
+- **Landing/content site**: Prefer Astro or HTML/CSS/JS when the design is content-led and low-state. Emphasize semantic structure, metadata, media handling, and fast first load.
+- **SaaS/dashboard**: Prefer React + Vite, Next.js, or React Router Framework Mode depending on routing/data needs. Include tables, filters, forms, empty/loading/error states, permissions, and testing.
+- **Ecommerce/catalog**: Prefer Next.js or Astro depending on cart/account/checkout complexity. Include product media, catalog data, SEO, structured content, performance, and state boundaries.
+- **Tool UI/prototype**: Prefer React + Vite or HTML/CSS/JS. Keep CI, SEO, and backend assumptions light unless requested.
+- **Vague design idea**: Route to `web-ui-designer` instead of turning an undefined concept into a technical plan.
 
 ## Stack Rules
 
@@ -81,13 +94,19 @@ When the user asks for "latest" versions, current package commands, or version-s
 - Call out risky or expensive parts early: complex canvas/WebGL, heavy scroll animation, custom cursors, video backgrounds, asset production, CMS/data needs, authentication, ecommerce, or localization.
 - Include a "what not to build" note when a tempting library or pattern would add complexity without improving fidelity.
 - Keep testing, deployment, SEO, and state strategy proportional. A throwaway prototype should not receive enterprise CI, and a production ecommerce flow should not stop at visual sections.
+- Avoid filling every section with boilerplate. When a section does not materially affect the build, write `Not material for this build` and move on.
+- Before finalizing, check the plan against `references/planning-quality-checklist.md`.
 
 ## Reference Files
 
 - Load `references/output-template.md` when writing the final plan.
 - Load `references/stack-selection.md` for the quick framework/dependency matrix.
 - Load `references/framework-selection.md` when choosing between HTML/CSS/JS, Astro, React + Vite, Next.js, SvelteKit, React Router Framework Mode, motion libraries, shadcn/ui, or 3D.
+- Load `references/project-structures.md` when the plan needs framework-specific file trees for Astro, SvelteKit, React Router Framework Mode, Next.js, React + Vite, or HTML/CSS/JS.
 - Load `references/react-project-structure.md` when the plan uses React, Vite, or Next.js.
+- Load `references/planning-quality-checklist.md` before finalizing any substantial plan or when the request is broad, vague, or production-oriented.
+- Load `references/handoff-contracts.md` when the output must feed `frontend-implementation`, audit skills, acceptance review, or `website-master-prompts`.
+- Load `references/example-plans.md` when the expected output shape is unclear or when calibrating a compact scenario-specific plan.
 - Load `references/motion-guidelines.md` when the mockup implies animation, smooth scrolling, parallax, canvas, WebGL, or advanced interactions.
 - Load `references/data-state-strategy.md` when the design includes forms, filters, search, auth state, dashboards, server data, URL-driven state, CMS content, or repeated configurable content.
 - Load `references/testing-strategy.md` when the plan should define unit, component, e2e, visual, accessibility, performance, or regression checks.
@@ -100,6 +119,8 @@ When the user asks for "latest" versions, current package commands, or version-s
 - Treating every site as a navbar, hero, feature cards, testimonials, CTA, footer template.
 - Choosing React or Next.js without explaining the design-driven reason.
 - Listing dependencies without install commands or library roles.
+- Forcing full production CI, SEO, or test suites into disposable prototypes.
+- Omitting state, form, routing, or data details for app-like interfaces.
 - Treating testing, deployment, state, SEO, or content strategy as an afterthought for production-oriented designs.
 - Ignoring mobile states, long text, hover/focus states, loading states, and reduced motion.
 - Producing a plan that describes sections but not files, components, or implementation order.

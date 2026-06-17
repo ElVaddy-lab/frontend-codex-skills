@@ -1,11 +1,17 @@
 # Output Template
 
-Use this template for design-to-frontend planning. Keep it concise for simple designs and expand for complex designs.
+Use this template for design-to-frontend planning. Keep it concise for simple designs and expand for complex designs. If a section does not materially affect the build, write `Not material for this build` instead of filling boilerplate.
+
+## Output Mode
+
+- Mode: `compact`, `full production`, or `handoff-ready`
+- Handoff status: `Implementation-ready`, `Needs design brief`, `Prompt-ready`, or `Audit-ready after build`
 
 ## 1. Design Analysis
 
 - Product type:
 - Primary user goal:
+- Planning scenario:
 - Layout model:
 - Visual language:
 - Main sections or screens:
@@ -43,6 +49,8 @@ Dependency roles:
 
 ## 4. Project Structure
 
+Choose a framework-specific tree from `project-structures.md` or `react-project-structure.md`.
+
 ```txt
 src/
   app/
@@ -57,7 +65,7 @@ src/
   assets/
 ```
 
-Explain only files that matter for the design.
+Explain only files that matter for the design. Remove folders that are not material.
 
 ## 5. Component Breakdown
 
@@ -103,6 +111,8 @@ Explain only files that matter for the design.
 - Auth or permissions:
 - Internationalization/content variants:
 
+If the design is static, state that state/data complexity is not material and name only the content files.
+
 ## 10. Testing and Audit Strategy
 
 - Build/typecheck/lint:
@@ -123,6 +133,8 @@ Explain only files that matter for the design.
 - Release gates:
 - Rollback/monitoring notes:
 
+For prototypes or local-only work, mark production CI/deployment as not material.
+
 ## 12. SEO and Content Plan
 
 - Metadata:
@@ -132,6 +144,8 @@ Explain only files that matter for the design.
 - Semantic content structure:
 - CMS/static content source:
 - Localization:
+
+For private dashboards or tools, mark public SEO as not material unless marketing/public routes are in scope.
 
 ## 13. Implementation Phases
 
@@ -157,3 +171,5 @@ Explain only files that matter for the design.
 - Accessibility risks and audit handoff are noted.
 - Build/test/deploy checks are named when production use is expected.
 - Dependencies are justified by actual design needs.
+- Irrelevant sections are explicitly marked as not material instead of padded.
+- Handoff status is clear.
