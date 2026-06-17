@@ -12,6 +12,7 @@ A collection of interconnected Codex skills covering Web/UI reverse engineering,
 | `frontend-implementation` | Implements an approved design or plan in a working frontend project, preserves handoff constraints, removes placeholders, adds interactions, and performs build, browser QA, and completion gate checks. |
 | `frontend-performance-audit` | Audits finished or near-finished frontends for Core Web Vitals, Lighthouse/PageSpeed evidence, bundle cost, JavaScript runtime work, media and font loading, animation cost, caching, budgets, and prioritized performance findings. |
 | `frontend-accessibility-audit` | Audits finished or near-finished frontends for WCAG 2.2, keyboard navigation, focus, ARIA/name-role-value, semantic HTML, labels, landmarks, forms, contrast, motion, screen-reader flow, automated findings, and prioritized accessibility fixes. |
+| `frontend-qa-orchestrator` | Coordinates frontend QA gates for finished or near-finished work, selecting smoke, acceptance, accessibility, performance, regression, and fix re-check passes with evidence, go/no-go status, and handoff routing. |
 | `frontend-acceptance-review` | Independently compares the requirements, design, and finished implementation, producing a requirements matrix, evidence-backed findings, and an acceptance verdict. |
 | `website-master-prompts` | Creates copy-ready website generation master prompts with prompt modes, generator targets, source handoff preservation, stack roles, first viewport, visual system, motion, responsive behavior, anti-generic constraints, and acceptance checks. |
 
@@ -31,6 +32,25 @@ web-ui-reverse-engineer
                               frontend-design-planner
         |
         v
+frontend-implementation
+        |
+        v
+frontend-qa-orchestrator
+        |
+        +---- smoke / gate selection ----> frontend-implementation
+        |
+        +---- performance gate ---------> frontend-performance-audit
+        |
+        +---- accessibility gate -------> frontend-accessibility-audit
+        |
+        `---- acceptance gate ----------> frontend-acceptance-review
+                                             |
+                                             +---- findings ----> frontend-implementation
+```
+
+Specialist audit chain when QA orchestration is not needed:
+
+```text
 frontend-implementation
         |
         v
@@ -128,6 +148,7 @@ frontend-codex-skills/
 |   |-- frontend-implementation/
 |   |-- frontend-performance-audit/
 |   |-- frontend-accessibility-audit/
+|   |-- frontend-qa-orchestrator/
 |   |-- frontend-acceptance-review/
 |   `-- website-master-prompts/
 |-- install.ps1

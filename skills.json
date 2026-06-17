@@ -1,6 +1,6 @@
 {
   "name": "frontend-codex-skills",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "skills": [
     {
       "name": "web-ui-reverse-engineer",
@@ -31,6 +31,11 @@
       "name": "frontend-accessibility-audit",
       "stage": "accessibility",
       "output": "Evidence-backed frontend accessibility audit"
+    },
+    {
+      "name": "frontend-qa-orchestrator",
+      "stage": "qa",
+      "output": "Frontend QA gate orchestration report"
     },
     {
       "name": "frontend-acceptance-review",
