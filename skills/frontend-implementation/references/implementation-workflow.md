@@ -8,6 +8,7 @@ Use this checklist while building.
 - Read `package.json`, source tree, routes/pages, global styles, and component directories.
 - Find existing design system, icon library, state library, animation library, and test commands.
 - Check whether the user supplied a plan from `frontend-design-planner`.
+- Check whether the user supplied a brief from `web-ui-designer`, and preserve brief mode, product scenario, first viewport, non-goals, and handoff status.
 
 ## 2. Prepare
 
@@ -15,6 +16,7 @@ Use this checklist while building.
 - If creating a new project, choose the smallest stack that satisfies the plan.
 - Add dependencies only when required by a named design behavior.
 - Create folders before implementation only when they will be used.
+- Translate the upstream contract into concrete files, components, states, and verification checks before editing.
 
 ## 3. Build Base UI
 
@@ -37,12 +39,20 @@ Use this checklist while building.
 - Add keyboard support for menus, dialogs, tabs, and forms where applicable.
 - Add animation last, with reduced-motion fallback.
 
-## 6. Verify and Polish
+## 6. Content and Assets
+
+- Replace scaffold copy and starter assets.
+- Use provided assets first; otherwise use scoped, visible stand-ins that support the design.
+- Remove dead links, fake buttons, unused sections, and broken media.
+- Put repeated content or sample data in data/config files when it improves maintainability.
+
+## 7. Verify and Polish
 
 - Run build/typecheck/lint/tests as available.
 - Start local dev server.
 - Inspect desktop and mobile viewports in a browser.
 - Fix overflow, overlap, clipped text, broken assets, blank screens, console errors, and slow/heavy effects.
+- Apply `completion-gates.md` before final response.
 
 ## Final Response
 

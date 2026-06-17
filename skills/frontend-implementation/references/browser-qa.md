@@ -33,6 +33,7 @@ The UI should:
 - Show the real product/app/tool/game experience, not a generic marketing shell.
 - Remain readable and usable on mobile.
 - Avoid generic decorative elements that were not part of the design intent.
+- Preserve upstream brief/plan constraints such as first viewport, product scenario, required states, and explicit non-goals.
 
 ## Final Evidence
 

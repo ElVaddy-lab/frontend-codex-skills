@@ -30,6 +30,8 @@ assets/
 - Use CSS transitions for simple hover/reveal effects.
 - Use JavaScript only for stateful interactions: menus, tabs, filters, sliders, dialogs, form behavior.
 - Use progressive enhancement: the page should still show core content if JavaScript fails.
+- Remove dead links, fake buttons, and default scaffold copy before final verification.
+- Keep asset paths local and verify that every referenced image, font, script, and stylesheet loads.
 
 ## Verification
 

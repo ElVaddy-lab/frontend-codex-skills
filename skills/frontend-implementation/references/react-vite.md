@@ -44,6 +44,8 @@ src/
 - Prefer `lucide-react` for icons if no icon library exists.
 - Use `clsx` or a local `cn` helper when class logic becomes conditional.
 - Use Framer Motion for component-level animation, GSAP for timeline or scroll choreography, not both without clear ownership.
+- Keep app/tool/dashboard state local until shared state is clearly required.
+- Remove Vite starter content, sample logos, and default CSS before final verification.
 
 ## Verification
 

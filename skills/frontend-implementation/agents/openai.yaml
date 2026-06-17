@@ -1,4 +1,4 @@
 interface:
   display_name: "Frontend Implementation"
-  short_description: "Implement frontend apps from approved designs or plans."
-  default_prompt: "Implement the supplied frontend design or approved development plan as a working project. Follow the selected stack, create the file structure and components, add responsive styling and interactions, then run build and visual QA checks."
+  short_description: "Implement verified frontends from approved designs or plans."
+  default_prompt: "Implement the supplied frontend design or approved development plan as a working project. Preserve the handoff contract, follow the selected stack, create complete files and components, remove placeholders, add responsive styling and interactions, then run build, browser QA, and completion gate checks."

@@ -1,6 +1,6 @@
 ---
 name: frontend-implementation
-description: Use when the user asks to implement, build, code, recreate, convert, or finish a frontend website, landing page, web app, dashboard, game UI, or design mockup from an approved design, approved technical plan, screenshot, Figma design, reference, or written specification. Do not use for design briefs, stack planning only, or copy-ready generator prompts.
+description: Use when the user asks to implement, build, code, recreate, convert, or finish a frontend website, landing page, web app, dashboard, game UI, tool UI, or design mockup from an approved design, approved technical plan, screenshot, Figma design, reference, or written specification. Do not use for design briefs, stack planning only, acceptance review, audits, or copy-ready generator prompts.
 ---
 
 # Frontend Implementation
@@ -16,6 +16,7 @@ Default to the user's language for status updates and final summaries. If the re
 - If the user asks to implement an already approved plan, start execution immediately.
 - If the user provides only a goal and needs design direction, use `web-ui-designer` first.
 - If the user provides only a raw mockup and no stack/plan, use `frontend-design-planner` first when available, unless the user explicitly asks to skip planning and code directly.
+- If the user provides a brief from `web-ui-designer` or a plan from `frontend-design-planner`, treat it as the implementation contract. Load `references/handoff-intake.md` before editing.
 - If an existing project is present, inspect it before choosing tools. Follow its package manager, framework, styling system, component conventions, and file organization.
 - If there is no project, create the smallest project that can faithfully implement the design.
 - If the user names a stack, obey it unless it is technically incompatible with the requested result.
@@ -30,6 +31,7 @@ Default to the user's language for status updates and final summaries. If the re
 - If concrete performance findings already exist, implement the fixes here and re-run the relevant verification.
 - Do not perform a deep accessibility audit here; use `frontend-accessibility-audit` when the task is diagnosis of WCAG, keyboard navigation, focus, ARIA/name-role-value, labels, forms, contrast, reduced motion, or screen-reader flow.
 - If concrete accessibility findings already exist, implement the fixes here and re-run the relevant verification.
+- Do not perform acceptance review here; use `frontend-acceptance-review` when the user asks whether finished work satisfies the brief, plan, requirements, or mockup.
 - If a prerequisite design or plan is missing but the user explicitly says to build anyway, make a minimal local assumption and document it in the final response.
 
 ## Implementation Workflow
@@ -41,16 +43,21 @@ Default to the user's language for status updates and final summaries. If the re
 5. **Extract components**: create components around design responsibilities, not arbitrary visual chunks.
 6. **Add interactions**: implement menus, tabs, filters, forms, hover/focus states, toggles, scroll behavior, and animations after the base layout is stable.
 7. **Handle assets**: use provided assets when available; otherwise choose appropriate temporary stand-ins, generated images, or clearly scoped CSS/canvas replacements.
-8. **Verify**: run build/tests/lint where available, start the dev server for app projects, and perform browser QA for desktop and mobile.
-9. **Polish**: fix overflow, spacing, responsiveness, contrast, console errors, broken assets, and motion issues before final response.
+8. **Eliminate placeholders**: replace scaffold text, fake controls, TODO comments, abbreviated code, broken links, and unused shell sections before verification.
+9. **Verify**: run build/tests/lint where available, start the dev server for app projects, and perform browser QA for desktop and mobile.
+10. **Polish**: fix overflow, spacing, responsiveness, contrast, console errors, broken assets, and motion issues before final response.
 
 Use `references/implementation-workflow.md` for the detailed execution checklist.
 
 ## Stack-Specific Guidance
 
+- Load `references/handoff-intake.md` before implementing from a design brief, technical plan, screenshot, Figma design, or written specification.
 - Load `references/react-vite.md` for React + Vite implementations.
 - Load `references/nextjs.md` for Next.js implementations.
 - Load `references/html-css-js.md` for framework-free implementations.
+- Load `references/content-asset-policy.md` when the build needs copy, images, icons, videos, generated media, sample data, or temporary stand-ins.
+- Load `references/completion-gates.md` before final response for any non-trivial implementation.
+- Load `references/verification-matrix.md` to choose verification depth by project type.
 - Load `references/browser-qa.md` before calling the work done.
 - For ambiguous multi-step Web/UI requests, consult `../web-ui-designer/references/workflow-routing.md` before deciding whether to implement immediately or hand off to design/planning first.
 - For performance-focused requests, hand off to `frontend-performance-audit` unless the user already provided specific findings to fix.
@@ -68,6 +75,7 @@ When current library syntax, install commands, or framework behavior may have ch
 - Use icons from the existing icon library when available; otherwise prefer `lucide-react` in React projects.
 - Keep cards for actual repeated items, modals, and framed tools. Avoid nesting cards inside cards.
 - Avoid one-note palettes and generic decorative gradients unless the design specifically calls for them.
+- Carry through `Brief mode`, `Product scenario`, `Handoff status`, `Output Mode`, `Implementation-ready`, and explicit non-goals from upstream briefs/plans when present.
 
 ## Coding Standards
 
@@ -86,6 +94,7 @@ When current library syntax, install commands, or framework behavior may have ch
 - If a file is too large to show in full, edit the actual file and summarize the important changes instead of emitting an abbreviated replacement.
 - If the user explicitly asks for full source in chat and the output is too long, split only at complete file or complete section boundaries and clearly continue from the next boundary.
 - Temporary visual data is allowed only when it is intentional product content or a scoped asset placeholder. It must not hide missing implementation logic.
+- Do not leave lorem ipsum, generic "Feature 1", empty hrefs, dead buttons, fake nav items, unused sections, broken images, or default starter content unless the brief explicitly calls them sample/demo content.
 
 ## Verification Standard
 
@@ -97,6 +106,7 @@ Before the final response, verify with evidence:
 - Browser QA covers at least one desktop and one mobile viewport.
 - Console and network errors are checked.
 - Screenshots or visual inspection confirm the main UI is nonblank, framed correctly, and not overlapping.
+- Completion gates in `references/completion-gates.md` are satisfied or explicitly reported as blocked with reason.
 
 If any verification cannot run, say exactly why in the final response.
 

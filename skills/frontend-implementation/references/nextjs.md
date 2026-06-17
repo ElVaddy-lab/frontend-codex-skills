@@ -39,6 +39,8 @@ public/
 - Mark components with `"use client"` only when they need state, effects, browser APIs, or animation libraries.
 - Keep server components for static content when possible.
 - Avoid adding client-side state to whole pages when only one component is interactive.
+- Remove default starter routes, logos, and placeholder metadata before final verification.
+- Preserve public route semantics, first viewport, and SEO/content expectations from the upstream plan.
 
 ## Verification
 
