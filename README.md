@@ -8,7 +8,7 @@ A collection of interconnected Codex skills covering Web/UI reverse engineering,
 |---|---|
 | `web-ui-reverse-engineer` | Decomposes an existing website, mockup, Figma design, live URL, or frontend codebase into components, design tokens, layout rules, responsive behavior, interaction patterns, assets, implementation clues, and confidence-rated unknowns. |
 | `web-ui-designer` | Creates a goal-aware Web/UI design brief covering the audience, information architecture, first viewport, visual system, components, states, motion, responsiveness, and accessibility. |
-| `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a technical frontend plan covering the stack, dependencies, file structure, components, and implementation stages. |
+| `frontend-design-planner` | Converts an approved design, Figma file, or mockup into a technical frontend plan covering framework choice, dependencies, file structure, components, state/data, testing, deployment, SEO/content, and implementation stages. |
 | `frontend-implementation` | Implements an approved design or plan in a working frontend project, adds interactions, and performs build and browser QA. |
 | `frontend-performance-audit` | Audits finished or near-finished frontends for Core Web Vitals, Lighthouse/PageSpeed evidence, bundle cost, JavaScript runtime work, media and font loading, animation cost, caching, budgets, and prioritized performance findings. |
 | `frontend-accessibility-audit` | Audits finished or near-finished frontends for WCAG 2.2, keyboard navigation, focus, ARIA/name-role-value, semantic HTML, labels, landmarks, forms, contrast, motion, screen-reader flow, automated findings, and prioritized accessibility fixes. |

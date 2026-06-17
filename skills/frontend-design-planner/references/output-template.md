@@ -20,8 +20,11 @@ Why:
 Alternatives considered:
 
 - HTML/CSS/JS:
+- Astro:
 - React + Vite:
 - Next.js:
+- SvelteKit:
+- React Router Framework Mode:
 
 ## 3. Dependencies
 
@@ -89,7 +92,48 @@ Explain only files that matter for the design.
 - Text overflow strategy:
 - Navigation changes:
 
-## 9. Implementation Phases
+## 9. Data and State Plan
+
+- Static content/config:
+- Local UI state:
+- URL state:
+- Server state:
+- Forms and validation:
+- Loading/empty/error/success states:
+- Auth or permissions:
+- Internationalization/content variants:
+
+## 10. Testing and Audit Strategy
+
+- Build/typecheck/lint:
+- Unit/component tests:
+- E2E/browser tests:
+- Visual regression:
+- Accessibility audit handoff:
+- Performance audit handoff:
+- Manual QA viewports/states:
+
+## 11. Deployment and CI Plan
+
+- Hosting target:
+- Build command:
+- Preview deploys:
+- Environment variables:
+- CI checks:
+- Release gates:
+- Rollback/monitoring notes:
+
+## 12. SEO and Content Plan
+
+- Metadata:
+- Open Graph/social cards:
+- Structured data:
+- Sitemap/robots:
+- Semantic content structure:
+- CMS/static content source:
+- Localization:
+
+## 13. Implementation Phases
 
 1. Initialize project and base tooling.
 2. Add design tokens, global styles, and asset folders.
@@ -98,9 +142,10 @@ Explain only files that matter for the design.
 5. Add responsive behavior.
 6. Add animations and interactions.
 7. Add data/config layer if repeated content exists.
-8. Run QA and polish.
+8. Add planned tests, route metadata, and deployment config when relevant.
+9. Run QA and polish.
 
-## 10. Quality Checklist
+## 14. Quality Checklist
 
 - Layout matches the supplied design on desktop and mobile.
 - No text overflow or incoherent overlap.
@@ -109,4 +154,6 @@ Explain only files that matter for the design.
 - Keyboard navigation and visible focus are acceptable.
 - Motion respects reduced-motion preferences.
 - Lighthouse/performance risks are noted.
+- Accessibility risks and audit handoff are noted.
+- Build/test/deploy checks are named when production use is expected.
 - Dependencies are justified by actual design needs.
