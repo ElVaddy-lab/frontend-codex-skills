@@ -4,10 +4,12 @@ Use before finalizing a Web/UI design brief.
 
 ## Goal Fit
 
+- Brief mode, product scenario, and handoff status are stated.
 - The design direction matches the product type and business goal.
 - The primary user action is visible and supported.
 - The first viewport proves the product/category quickly.
 - The design does not rely on generic adjectives without concrete rules.
+- Assumptions and non-goals are explicit when inputs are thin.
 
 ## Information Architecture
 
@@ -15,6 +17,7 @@ Use before finalizing a Web/UI design brief.
 - Navigation model is named.
 - The first viewport is not automatically a generic hero.
 - The next section or next action is clear.
+- The IA supports the business outcome, not just a familiar page template.
 
 ## Visual System
 
@@ -30,6 +33,7 @@ Use before finalizing a Web/UI design brief.
 - Empty/loading/error/success states are covered where relevant.
 - Hover/focus/active/disabled states are covered.
 - Long text and mobile constraints are addressed.
+- Tool, dashboard, ecommerce, and app designs include the states needed for actual use.
 
 ## Accessibility and UX
 
@@ -43,4 +47,15 @@ Use before finalizing a Web/UI design brief.
   - technical plan via `frontend-design-planner`;
   - implementation via `frontend-implementation`;
   - generator prompt via `website-master-prompts`.
+- Existing-artifact redesign routes through `web-ui-reverse-engineer` when evidence is missing.
 - The handoff is specific enough that the next skill does not need to reinterpret the design direction.
+
+## Rejection Checks
+
+Revise the brief if it:
+
+- defaults to `navbar -> hero -> cards -> CTA`;
+- uses decorative orbs, blobs, glass, or gradients without a product reason;
+- hides the actual product, work surface, object, or useful action below a decorative first viewport;
+- chooses stack, dependencies, package commands, file trees, or implementation phases;
+- leaves the next skill to infer the design direction.

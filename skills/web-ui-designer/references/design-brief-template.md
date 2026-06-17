@@ -1,6 +1,12 @@
 # Design Brief Template
 
-Use this structure for the final Web/UI design brief. Keep it concise for small tasks and expand for complex products.
+Use this structure for the final Web/UI design brief. Keep it concise for small tasks and expand for complex products. Preserve the 10-section contract, but start with brief metadata.
+
+## Brief Metadata
+
+- Brief mode: `concept brief`, `production brief`, `redesign brief`, or `handoff-ready brief`
+- Product scenario:
+- Handoff status: `Planner-ready`, `Implementation-ready`, `Prompt-ready`, `Needs reverse engineering`, or `Needs product input`
 
 ## 1. Goal and Audience
 
@@ -10,6 +16,8 @@ Use this structure for the final Web/UI design brief. Keep it concise for small 
 - Primary user action:
 - Trust or credibility needs:
 - Content density:
+- Assumptions:
+- Non-goals:
 
 ## 2. Design Direction
 
@@ -109,5 +117,8 @@ Choose the next step:
 - Send to `frontend-design-planner` when the user wants a technical plan.
 - Send to `frontend-implementation` when the user already approved the design and wants code.
 - Send to `website-master-prompts` when the user wants a generator prompt.
+- Send to `web-ui-reverse-engineer` when redesign depends on an existing artifact that has not been analyzed.
 
 Include a short one-sentence handoff note.
+
+Do not include stack, dependency, package, file tree, or build-command decisions in this design brief.
