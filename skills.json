@@ -1,6 +1,6 @@
 {
   "name": "frontend-codex-skills",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "skills": [
     {
       "name": "web-ui-reverse-engineer",
@@ -16,6 +16,11 @@
       "name": "frontend-design-planner",
       "stage": "planning",
       "output": "Frontend implementation blueprint"
+    },
+    {
+      "name": "frontend-code-architecture",
+      "stage": "architecture",
+      "output": "Frontend code architecture guardrails"
     },
     {
       "name": "frontend-implementation",

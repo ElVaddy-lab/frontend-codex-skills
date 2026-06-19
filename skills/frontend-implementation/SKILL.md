@@ -17,6 +17,7 @@ Default to the user's language for status updates and final summaries. If the re
 - If the user provides only a goal and needs design direction, use `web-ui-designer` first.
 - If the user provides only a raw mockup and no stack/plan, use `frontend-design-planner` first when available, unless the user explicitly asks to skip planning and code directly.
 - If the user provides a brief from `web-ui-designer` or a plan from `frontend-design-planner`, treat it as the implementation contract. Load `references/handoff-intake.md` before editing.
+- If the user asks for maintainable code structure, component extraction, file organization, architecture guardrails, or not putting everything in one file, use `frontend-code-architecture` alongside implementation.
 - If an existing project is present, inspect it before choosing tools. Follow its package manager, framework, styling system, component conventions, and file organization.
 - If there is no project, create the smallest project that can faithfully implement the design.
 - If the user names a stack, obey it unless it is technically incompatible with the requested result.
@@ -60,6 +61,7 @@ Use `references/implementation-workflow.md` for the detailed execution checklist
 - Load `references/verification-matrix.md` to choose verification depth by project type.
 - Load `references/browser-qa.md` before calling the work done.
 - For ambiguous multi-step Web/UI requests, consult `../web-ui-designer/references/workflow-routing.md` before deciding whether to implement immediately or hand off to design/planning first.
+- For architecture-sensitive implementation or refactor requests, consult `../frontend-code-architecture/SKILL.md` and its references before extracting components, hooks, utilities, data/config, or style tokens.
 - For performance-focused requests, hand off to `frontend-performance-audit` unless the user already provided specific findings to fix.
 - For accessibility-focused requests, hand off to `frontend-accessibility-audit` unless the user already provided specific findings to fix.
 
